@@ -23,7 +23,7 @@ def load_rag_system():
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_id)
     
-   pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, max_new_tokens=256)
+    pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, max_new_tokens=256)
     llm = HuggingFacePipeline(pipeline=pipe)
     
     template = """
